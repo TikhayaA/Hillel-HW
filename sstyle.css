@@ -1,0 +1,36 @@
+h1{
+    font-size: 20px;
+    text-align: center;
+}
+.to-do-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.inp{
+    width: 60%;
+}
+.btn{
+    width: 30%;
+    cursor: pointer;
+}
+.list{
+    width: 100%;
+    margin-top: 20px;
+    min-height: 400px;
+    height: fit-content;
+    padding-left: 30px;
+}
+.to-do-list__item{
+    border: 1px solid red;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 10px;
+}
