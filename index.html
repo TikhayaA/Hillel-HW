@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="sstyle.css">
+    <link rel="stylesheet" href="style.css">
     <script src="./script.js"></script>
    
 </head>
 <body>
-    <h1>To do list</h1>
-    <div class="to-do-list">
-        <input class="inp to-do-list__item" type="text" placeholder="Enter text">
-        <button class="btn to-do-list__item">Push</button>
-        <ul class="list to-do-list__item">
+    <div class="table">
+        <div class="table__admin admin">
+            <input id="admin-name" type="text" class="admin__item" placeholder="Name">
+            <input id="admin-last-name" type="text" class="admin__item" placeholder="last name">
+            <input id="admin-number" type="text" class="admin__item" placeholder="phone">
+            <button class="admin__btn admin__item">PRESS</button>
+        </div>
+        <ul class="table__list">
             
         </ul>
     </div>
+    
     <script src="./app.js"></script>
 </body>
 </html>
