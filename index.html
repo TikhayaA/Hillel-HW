@@ -9,14 +9,32 @@
    
 </head>
 <body>
-    <div class="table">
-        <div class="table__admin admin">
-            <input id="admin-name" type="text" class="admin__item" placeholder="Name">
-            <input id="admin-last-name" type="text" class="admin__item" placeholder="last name">
-            <input id="admin-number" type="text" class="admin__item" placeholder="phone">
-            <button class="admin__btn admin__item">PRESS</button>
+    <div class="form">
+        <div class="form--title-wrap">
+            <div class="form--input-wrapper">
+                <div class="form--input-item">
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" class="inputs-user" placeholder="Name">
+                </div>
+                <div id="name-validation" class="validation-msgs"></div>
+            </div>
+            <div class="form--input-wrapper">
+                <div class="form--input-item">
+                    <label for="lastName">Last Name:</label>
+                    <input id="last-Name" type="text" class="inputs-user" placeholder="lastName">
+                </div>
+                <div id="lastName-validation" class="validation-msgs"></div>
+            </div>
+            <div class="form--input-wrapper">
+                <div class="form--input-item">
+                    <label for="phone">Phone:</label>
+                    <input id="phone" type="tel" class="inputs-user" placeholder="Phone">
+                </div>
+                <div id="phone-validation" class="validation-msgs"></div>
+            </div>
+            <button class="form--btn">Add</button>
         </div>
-        <ul class="table__list">
+        <ul class="form--list-wrap">
             
         </ul>
     </div>
@@ -24,3 +42,4 @@
     <script src="./app.js"></script>
 </body>
 </html>
+
