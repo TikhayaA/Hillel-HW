@@ -1,59 +1,44 @@
-const adminName = document.getElementById("admin-name");
-const adminLastName = document.getElementById("admin-last-name");
-const adminNumber = document.getElementById("admin-number");
-const tableList = document.querySelector(".table__list");
-const btn = document.querySelector(".admin__btn");
+const btn = document.querySelector('.btn');
+const inputTaskE = document.getElementById('input-task');
+const bodyItem = document.querySelector('.body-item');
 
+btn.addEventListener("click", addNewTask);
+bodyItem.addEventListener("click", onDelete);
+bodyItem.addEventListener("click", changeColor);
 
-btn.addEventListener("click", addTable);
+function addNewTask(){
+    const taskE = inputTaskE.value;
 
-function addTable(){
-
-    const listName = adminName.value;
-    const listlastName = adminLastName.value;
-    const listNumber = adminNumber.value;
-
-    if (!listName.trim() || !listlastName.trim() || !listNumber.trim()){
+    if (!taskE.trim()){
         alert('Please fill empty field!');
+        clearValue(inputTaskE);
         return;
     }
-
-
-    const newContact = document.createElement('li');
-    const newItemName = document.createElement('div');
-    const newItemLastName = document.createElement('div');
-    const newItemNumber = document.createElement('div');
-
-
-    if ( /[A-Za-z]/.test(adminName.value) && /[A-Za-z]/.test(adminLastName.value) && /[0-9]/.test(adminNumber.value)) {
-
-        addHtml(newItemName, adminName);
-        addHtml(newItemLastName, adminLastName);
-        addHtml(newItemNumber, adminNumber);
-
-        createChild(newContact, newItemName);
-        createChild(newContact, newItemLastName);
-        createChild(newContact, newItemNumber);
-        createChild(tableList, newContact);
-
-        newContact.classList.add('table__item');
-
-        clearValue(adminName);
-        clearValue(adminLastName);
-        clearValue(adminNumber);
-        
-    } else {
-       alert ('input error');
-   }
-}
-function createChild(p, ch){
-    p.appendChild(ch);
+    const el = createNewElement(taskE, 'div', 'item-task', 'close-btn' );
+    addHtml(bodyItem, el);
+    clearValue(inputTaskE);
 }
 
+function createNewElement (taskE, containerTag, itemClassname, btnClassName){
+    return `<${containerTag} class="${itemClassname}">
+                ${taskE}
+                <button class="${btnClassName}"></button>
+            </${containerTag}>`
+}
 function addHtml(el, val){
-    el.innerHTML = val.value;
+    el.innerHTML += val;
+}
+function clearValue(inpValue){
+    inpValue.value = "";
+}
+function onDelete(event){
+    if (event.target.className === 'close-btn'){
+        event.target.closest('.item-task').remove();
+    }
 }
 
-function clearValue(inpValue) {
-    inpValue.value = "";
+function changeColor(event){
+    if (event.target.className !== 'close-btn'){
+        event.target.closest('.item-task').classList.toggle('item-task-done');
+    }
 }
