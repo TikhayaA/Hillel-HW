@@ -5,6 +5,4 @@ function makeCount() {
         return count++;
     };
 }
-let counter = makeCount()();
-console.log(counter);
-console.log(counter);
+let counter = makeCount();
