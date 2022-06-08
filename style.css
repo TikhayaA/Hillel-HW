@@ -125,3 +125,6 @@ input::placeholder{
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }
+.error-cont{
+    color: red;
+}
